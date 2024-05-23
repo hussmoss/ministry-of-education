@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ministry of Education</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+    .container {
+      text-align: center;
+    }
+    .input-box {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Ministry of Education</h1>
+    <div class="input-box">
+      <input type="text" id="inputCode" placeholder="ادخل رقم الجلوس">
+      <button onclick="checkCode()">Submit</button>
+    </div>
+    <div id="pdfContainer" style="display: none;">
+      <embed id="pdfEmbed" src="" type="application/pdf" width="100%" height="600px" />
+    </div>
+  </div>
+
+  <script>
+    function checkCode() {
+      var inputCode = document.getElementById("inputCode").value;
+      if (inputCode === "155595") {
+        document.getElementById("pdfContainer").style.display = "block";
+        document.getElementById("pdfEmbed").src = "D:\Untitled.pdf";
+      } else {
+        alert("Incorrect code. Please try again.");
+      }
+    }
+  </script>
+</body>
+</html>
